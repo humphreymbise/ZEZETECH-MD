@@ -24,14 +24,14 @@ const app = express();
 const _ = require("lodash");
 let lastTextTime = 0;
 const messageDelay = 5000;
-const Events = require('./action/events');
+const Events = require('./action/event');
 const logger = pino({ level: 'silent' });
 //const authentication = require('./action/auth');
 const PhoneNumber = require("awesome-phonenumber");
 const { imageToWebp, videoToWebp, writeExifImg, writeExifVid } = require('./lib/ravenexif');
 const { smsg, isUrl, generateMessageTag, getBuffer, getSizeMedia, fetchJson, await, sleep } = require('./lib/ravenfunc');
 const { sessionName, session, mode, prefix, autobio, autolike, port, mycode, anticall, antiforeign, packname, autoviewstatus } = require("./set.js");
-const makeInMemoryStore = require('./store/store.js'); 
+const makeInMemoryStore = require('./store/store'); 
 const store = makeInMemoryStore({ logger: logger.child({ stream: 'store' }) });
 //const store = makeInMemoryStore({ logger: pino().child({ level: "silent", stream: "store" }) });
 const color = (text, color) => {
