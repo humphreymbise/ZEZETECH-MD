@@ -24,7 +24,7 @@ const app = express();
 const _ = require("lodash");
 let lastTextTime = 0;
 const messageDelay = 5000;
-const Events = require('./action/event');
+const events = require('./action/event');
 const logger = pino({ level: 'silent' });
 //const authentication = require('./action/auth');
 const PhoneNumber = require("awesome-phonenumber");
@@ -85,11 +85,11 @@ client.ev.on('connection.update', (update) => {
 startRaven()
   }
   } else if (connection === 'open') {
-      console.log(color("Congrats, BLACK MD has successfully connected to this server", "green"));
+      console.log(color("Congrats, Zeze MD has successfully connected to this server", "green"));
       console.log(color("Follow me on github as Blackie254", "red"));
       console.log(color("Text the bot number with menu to check my command list"));
       client.groupAcceptInvite('L4gDFUFkHmD9NNa2XvVbNj');
-      const Texxt = `✅ 𝗖𝗼𝗻𝗻𝗲𝗰𝘁𝗲𝗱 » »【BLACK MD】\n`+`👥 𝗠𝗼𝗱𝗲 »» ${mode}\n`+`👤 𝗣𝗿𝗲𝗳𝗶𝘅 »» ${prefix}`
+      const Texxt = `✅ 𝗖𝗼𝗻𝗻𝗲𝗰𝘁𝗲𝗱 » »【ZEZE MD】\n`+`👥 𝗠𝗼𝗱𝗲 »» ${mode}\n`+`👤 𝗣𝗿𝗲𝗳𝗶𝘅 »» ${prefix}`
       client.sendMessage(client.user.id, { text: Texxt });
     }
   });
